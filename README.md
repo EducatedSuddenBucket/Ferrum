@@ -1,7 +1,6 @@
-# BlockBot
+# Ferrum
 
-This project creates an AI-powered chat bot for Minecraft using Mineflayer and the Together AI API.
-
+idk what to put in the description
 ## Setup Instructions
 
 1. Install Node.js if you haven't already.
@@ -10,7 +9,7 @@ This project creates an AI-powered chat bot for Minecraft using Mineflayer and t
 
 3. Install the required dependencies:
 ```bash
-npm install mineflayer axios
+npm install mineflayer express http socket.io fs
 ```
 
 4. Open the config.json file and modify it according to your details
