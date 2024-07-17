@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ferrum</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        html, body {
+            height: 100%;
+            overflow: hidden;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #0d1117;
+            color: #c9d1d9;
+            display: flex;
+            flex-direction: column;
+        }
+        #botInfo {
+            background-color: #161b22;
+            padding: 10px;
+            border-bottom: 1px solid #30363d;
+        }
+        .container {
+            display: flex;
+            flex: 1;
+            overflow: hidden;
+        }
+        .left-panel {
+            flex: 2;
+            display: flex;
+            flex-direction: column;
+            border-right: 1px solid #30363d;
+        }
+        .right-panel {
+            flex: 1;
+            padding: 20px;
+            border-left: 1px solid #30363d;
+            overflow-y: auto;
+        }
+        #chat {
+            flex: 1;
+            overflow-y: auto;
+            padding: 20px;
+            border-bottom: 1px solid #30363d;
+        }
+        #messageForm {
+            padding: 20px;
+            display: flex;
+        }
+        #messageInput {
+            flex: 1;
+            padding: 10px;
+            background-color: #161b22;
+            border: 1px solid #30363d;
+            color: #c9d1d9;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #238636;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        #playerList {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+        #playerList li {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="botInfo">
+        <strong>Steve</strong> | Latency: 42ms | Players: 5 | Server: 192.168.1.100:25565 | X: 120.50, Y: 64.00, Z: -300.75
+    </div>
+    <div class="container">
+        <div class="left-panel">
+            <div id="chat">
+                <p>Welcome to the server!</p>
+                <p>User1: Hello everyone!</p>
+                <p>User2: Hi there!</p>
+            </div>
+            <form id="messageForm">
+                <input type="text" id="messageInput" placeholder="Type a message...">
+                <button type="submit">Send</button>
+            </form>
+        </div>
+        <div class="right-panel">
+            <h2>Players</h2>
+            <ul id="playerList">
+                <li>Steve</li>
+                <li>Alex</li>
+                <li>User1</li>
+                <li>User2</li>
+                <li>User3</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        const chatDiv = document.getElementById('chat');
+        const messageForm = document.getElementById('messageForm');
+        const messageInput = document.getElementById('messageInput');
+
+        messageForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            if (messageInput.value) {
+                const messageElement = document.createElement('p');
+                messageElement.textContent = `You: ${messageInput.value}`;
+                chatDiv.appendChild(messageElement);
+                chatDiv.scrollTop = chatDiv.scrollHeight;
+                messageInput.value = '';
+            }
+        });
+    </script>
+</body>
+</html>
