@@ -139,10 +139,10 @@
             if (lastBotInfo && lastPosition) {
                 botInfo.innerHTML = `
                     <strong>${lastBotInfo.name}</strong> | 
-                    Latency: ${lastBotInfo.latency}ms | 
-                    Players: ${lastBotInfo.playerCount} | 
-                    Server: ${lastBotInfo.serverIp}${lastBotInfo.serverPort} | 
-                    X: ${lastPosition.x.toFixed(2)}, Y: ${lastPosition.y.toFixed(2)}, Z: ${lastPosition.z.toFixed(2)}
+                    ${lastBotInfo.latency}ms | 
+                    ${lastBotInfo.serverIp}${lastBotInfo.serverPort} | 
+                    X: ${lastPosition.x.toFixed(2)}, Y: ${lastPosition.y.toFixed(2)}, Z: ${lastPosition.z.toFixed(2)} |
+                    ${lastBotInfo.playerCount} Players Playing
                 `;
             }
         }
