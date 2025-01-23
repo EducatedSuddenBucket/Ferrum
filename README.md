@@ -1,4 +1,4 @@
-# Azure
+# Indigo
 
 idk what to put in the description
 ## Setup Instructions
